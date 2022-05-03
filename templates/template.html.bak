@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #4e697d;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #cf9d9d;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #2A475E;
+  color: white;
+}
+
+.topnav .search-container {
+  float: right ;
+}
+
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+  width: 700px;
+}
+
+.topnav .search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #7C8EA3;
+  color: #a6a5a2;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  width: 100px;
+}
+
+.topnav .search-container button:hover {
+  background: #9ec8ff;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
+    float: none;
+    display: block;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    padding: 14px;
+  }
+  .topnav input[type=text] {
+    border: 1px solid #9ec8ff;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="#home">Main</a>
+  <div class="search-container">
+     <form action = "http://127.0.0.1:5000/" method = "post">
+      <input type="text" placeholder="Please input a Steam game review" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+</div>
+
+<div style="padding-left:16px">
+  <h2> Steam Review Classifier</h2>
+    <h3>Model Details</h3>
+    <p>This model was trained on 88,000 Steam reviews. It uses 7 different classification models to predict the sentiment of a review with an overall accuracy of 90%</p>
+	<p>Models Used</p>
+		<li>Ridge Regression</li>
+		<li>Perceptron</li>
+		<li>Passive Aggressive Classifier</li>
+		<li>Complement Naive Bayes</li>
+		<li>Multinomial Naive Bayes</li>
+		<li>Bernoulli Naive Bayes</li>
+		<li>LinearSVC</li>
+</div>
+
+<div style="padding-left:16px">
+<h3>Example Reviews</h3>
+		<li>Australian servers are dead, don't buy unless you want your soul to noclip through your body in yankland servers</li>
+		<li>Incredible, ball busting action, the possibilities are truly endless. Two Hills is goat vaccination spot</li>
+		<li>This game is such a random and awesome concept from the drifting horses to giving your partner the flower at the end is all great!!</li>
+		<li>They've changed so much within the first 3 weeks of early access the game isn't even fun anymore.</li>
+		<li>extremely toxic players</li>
+		<li>This game is fantastic, just needs to work on communication, graphics, map, characters, economy, how the units aim, realistic unit movement, anti aliasing, the ai, diplomacy, rational decision making by ai, the HUD, the tutorial, time to load, synchronization, the launcher, understandability and getting a new developer team.</li>
+		<li>The narrative campaign is admittedly not my preferred way to play a Total War game as I would rather play a sandbox mode. But the campaign as it is today, is still fun to play and I think more fun than the Vortex Campaign in Warhammer 2 which I played maybe 2 or 3 times. In the Warhammer 3 narrative campaign, rifts will open up at a regular basis out of which will spawn enemy heroes and armies. You can close these rifts with your own armies or heroes. But if you want to win the campaign as intended, you need to take your main Legendary Lord into these gates where they have to go through a gauntlet (battles, attrition, mazes) effectively taking them off the main map for about 10 turns. The rifts and the gauntlets themselves were never a big deal for me - annoying, but not a game breaker for me. I was still able to expand a wide empire without my Legendary Lord on the field. The latest patch notes offer solutions to increase the rewards in the gauntlets and even prevent the rifts from opening in the first place which would allow the player to not even interact with the narrative campaign at all.</li>
+		<li>I cringe everytime I think about how much money I spent on iRenting. Over $600 and I still don't own a thing. That much money and I rent less than a third of all the cars and tracks available. Their business model is a ripoff. Unless you subcribe every month, you have access to nothing. Even though I spent over $600, I can't play unless I subscribe. I can't even do hot laps with the cars and tracks I paid for.</li>
+</div>
+
+<div style="padding-left:16px" style="white-space: pre-wrap;">
+<h3>Topic Models</h3>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\full_lda.html">Full Reviews Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\positive_lda.html">Positive Reviews Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\negative_lda.html">Negative Reviews Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\action_lda.html">Action Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\adventure_lda.html">Adventure Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\rpg_lda.html">RPG Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\simulation_lda.html">Simulation Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\sports_lda.html">Sport Topic Model</a></li>
+<li><a href="file:///C:\Users\Patrick\Documents\concordia-bootcamps\Final Project\strategy_lda.html">Strategy Topic Model</a></li>
+
+</div>
+</body>
+</html>
